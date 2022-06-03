@@ -3,6 +3,10 @@
 
     <head>
         <link rel="stylesheet" href="../css/poggers.css">
+        <meta charset="utf-8">
+        <meta name="author" content="BERMUDO, Aryenne Kiersten">
+        <meta name="keywords" content="HTML, JavaScript">
+        <meta name="revised" content="June 3, 2022">
         <title>Results!</title>
     </head>
 
@@ -25,6 +29,7 @@
 
         <script>
 
+            // retrieve variables in storage
             var PomuFinal=localStorage.getItem("pomuScore");
             var EliraFinal=localStorage.getItem("eliraScore");
             var FinanaFinal=localStorage.getItem("finanaScore");
@@ -62,6 +67,7 @@
                     }
                 }
 
+                //compare scores to see who is highest, then changes the html to whoever you got
                 if (PomuFinal>EliraFinal&&PomuFinal>FinanaFinal){
                     document.getElementById("finalResult").innerHTML="Pomu Rainpuff";
                     document.getElementById("descPhoto").innerHTML="<img class=\"icon\" src=\"../images/PomuIcon.png\">";
@@ -77,6 +83,7 @@
                 
             }
 
+            // clear local storage for next attempt
             localStorage.clear("PScore");
             localStorage.clear("EScore");
             localStorage.clear("FScore");
