@@ -3,6 +3,9 @@
     <head>
         <link rel="stylesheet" href="../css/poggers.css">
         <meta charset="utf-8">
+        <meta name="author" content="BERMUDO, Aryenne Kiersten">
+        <meta name="keywords" content="HTML, JavaScript">
+        <meta name="revised" content="June 3, 2022">
         <title>Lazulight Quiz</title>
     </head>
 
@@ -159,6 +162,8 @@
         <script>
 
             var Pomu=0, Elira=0, Finana=0, total=0;
+            
+            //to check and give points to whichever choice coressponds with the vtuber at question
 
             function fieldCheck(choice) {
 
@@ -181,11 +186,13 @@
                 event.preventDefault();
                 var form_data = new FormData(document.getElementById("Lazulight"));
 
+                // repeats fieldCheck function 7 times, can be changed to how many questions you have
                 for (x=1;x<=7;x++){
                     var question_name = "q"+String(x);
                     fieldCheck(form_data.get(question_name));
                 }
-
+                
+                //only allows you to submit when all questions are answered
                 if (total == 7) {
                     location.href="../htdocs/ResultPage.html";
                 }
@@ -193,6 +200,7 @@
                     alert("Please answer all the questions!");
                 }
 
+                // stores data to be acessed in the results webpage
                 localStorage.setItem("pomuScore",Pomu);
                 localStorage.setItem("eliraScore",Elira);
                 localStorage.setItem("finanaScore",Finana);
